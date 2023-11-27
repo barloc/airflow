@@ -984,7 +984,7 @@ class BaseSecurityManager:
             log.debug("LDAP search returned: %s", nested_groups_search_result)
 
             nested_groups = [
-                x[0] for x in nested_groups_search_result if x[0] is not None
+                x[0].encode() for x in nested_groups_search_result if x[0] is not None
             ]
             log.debug("LDAP nested groups for users: %s", nested_groups)
 
